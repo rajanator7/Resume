@@ -1,0 +1,1017 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<title>Gaurav Raj Chattarki | The MarTech guy</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+<script src="https://use.fontawesome.com/57fd7ffc48.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<style>
+  *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -moz-font-feature-settings: "liga" on;
+  font-family: 'Lato', sans-serif;
+  background: #2d2d2d;
+  color: #cccccc;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+ul {
+  padding-left: 40px;
+}
+
+a {
+  color: #cccccc;
+  text-decoration: none;
+}
+a:hover {
+  color: #2196f3;
+  text-decoration: underline;
+}
+
+.page-container {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  background-image: url(https://res.cloudinary.com/drootz/image/upload/v1492655467/personalSiteBg_wip_ckpi2j.png);
+  background-size: 500px 500px;
+}
+
+.m-wrapper {
+  padding: 0 10px;
+  width: 100%;
+  max-width: 1260px;
+  margin: auto;
+}
+@media only screen and (min-width: 600px) and (max-width: 1260px) {
+  .m-wrapper {
+    max-width: 840px;
+    margin: auto;
+  }
+}
+@media only screen and (min-width: 1700px) {
+  .m-wrapper {
+    max-width: 1680px;
+    margin: auto;
+  }
+}
+
+.m-header {
+  padding: 50px 0 20px;
+}
+
+.m-title {
+  font-size: 3em;
+  font-weight: 900;
+  letter-spacing: -.03em;
+}
+
+.m-title-roles ul {
+  display: flex;
+  justify-content: left;
+  font-weight: 900;
+  letter-spacing: -.025em;
+  margin: 0;
+  padding: 0;
+  margin-left: 2px;
+  list-style-type: none;
+}
+.m-title-roles ul li {
+  margin-right: 5px;
+}
+
+.m-title-section {
+  margin: 30px 0 0;
+}
+.m-title-section h2 {
+  font-size: 2em;
+  font-weight: 300;
+  letter-spacing: -.025em;
+  border-left: 2px solid #cccccc;
+  padding-left: 10px;
+  margin: 0;
+}
+@media only screen and (min-width: 600px) {
+  .m-title-section h2 {
+    padding-left: 20px;
+  }
+}
+
+.m-roles-list {
+  font-weight: 900;
+  letter-spacing: -.025em;
+  margin-top: 0;
+  list-style-type: none;
+  padding-left: 20px;
+}
+@media only screen and (min-width: 450px) {
+  .m-roles-list {
+    list-style-type: disc;
+    padding-left: 40px;
+  }
+}
+
+.m-role-0 {
+  color: #cccccc;
+}
+
+.m-role-1 {
+  color: #ffcc66;
+}
+
+.m-role-2 {
+  color: #6699cc;
+}
+
+.m-role-3 {
+  color: #c780f7;
+}
+
+.m-role-4 {
+  color: #f0ed68;
+}
+
+.flex-row {
+  margin: auto;
+  width: 100%;
+  max-width: 1260px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media only screen and (min-width: 1275px) {
+  .flex-row {
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 1700px) {
+  .flex-row {
+    max-width: 1680px;
+  }
+}
+
+.m-chart {
+  font-family: 'Lato', sans-serif;
+  box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.6);
+  margin: 20px 10px 0;
+  background: #323232;
+  background: rgba(50, 50, 50, 0.8);
+}
+.m-chart h3 {
+  text-align: center;
+  font-size: 1.6em;
+  letter-spacing: -0.04em;
+  margin: -10px 0 40px;
+}
+@media only screen and (min-width: 450px) {
+  .m-chart h3 {
+    font-size: 2em;
+    margin: -40px 0 40px;
+  }
+}
+
+.chart-wrapper-outter {
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  display: flex;
+}
+@media only screen and (min-width: 380px) {
+  .chart-wrapper-outter {
+    width: 350px;
+    height: 350px;
+  }
+}
+@media only screen and (min-width: 450px) {
+  .chart-wrapper-outter {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+.chart-wrapper-inner {
+  margin: auto;
+  width: 250px;
+}
+@media only screen and (min-width: 380px) {
+  .chart-wrapper-inner {
+    width: 265px;
+  }
+}
+@media only screen and (min-width: 450px) {
+  .chart-wrapper-inner {
+    width: 275px;
+  }
+}
+
+.m-footer {
+  margin-top: 30px;
+  padding-top: 20px;
+}
+.m-footer .m-title {
+  margin-bottom: 10px;
+  font-size: 2em;
+  width: 100%;
+}
+
+.m-contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  justify-content: left;
+}
+.m-contact-container .m-address-line3 {
+  margin-bottom: 10px;
+}
+
+.m-contact-wrapper {
+  line-height: 1.25em;
+  list-style-type: none;
+  margin: 0 30px 0 0;
+  padding-left: 0;
+  width: 300px;
+  font-size: .8em;
+}
+@media only screen and (min-width: 350px) {
+  .m-contact-wrapper {
+    font-size: .9em;
+  }
+}
+.m-contact-wrapper li {
+  margin-bottom: 5px;
+}
+
+.m-copyright {
+  font-size: .7em;
+  font-weight: 300;
+  border-top: 1px solid rgba(204, 204, 204, 0.5);
+  margin-top: 30px;
+  padding: 10px 0 20px;
+}
+.m-copyright p {
+  text-align: center;
+  margin: 0;
+}
+@media only screen and (min-width: 450px) {
+  .m-copyright p {
+    text-align: right;
+  }
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<div class="page-container">
+<div class="m-header">
+<div class="m-wrapper">
+<div class="m-title">Gaurav Raj Chattarki</div>
+<div class="m-title-roles">
+<ul>
+<li class="m-role-1">People Manager</li>
+<li class="m-role-2">Process Practitioner</li>
+<li class="m-role-3">Marketing - Technology Guy</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="m-title-section">
+<div class="m-wrapper">
+<h2>Capabilities and Proficiency Ratings</h2>
+</div>
+</div>
+<div class="flex-row">
+<div class="m-chart">
+<div class="chart-wrapper-outter">
+<div class="chart-wrapper-inner">
+<ul class="m-roles-list">
+<li class="m-role-0">All Roles</li>
+<li class="m-role-1">People Manager</li>
+<li class="m-role-2">Process Practitioner</li>
+<li class="m-role-3">MarTech Guy</li>
+<li class="m-role-4">Product</li>
+</ul>
+<ul class="m-legend-list">
+<li class="m-rating-0">[ 0 = n/a ]</li>
+<li class="m-rating-1">[ 1 = Foundational ]</li>
+<li class="m-rating-2">[ 2 = Intermediate ]</li>
+<li class="m-rating-3">[ 3 = Advanced ]</li>
+</ul>
+</div>
+</div>
+<h3>Legend</h3>
+</div>
+<div class="m-chart">
+<div class="chart-wrapper-outter">
+<div class="chart-wrapper-inner">
+<canvas id="chart-business-skills"></canvas>
+</div>
+</div>
+<h3>Business</h3>
+</div>
+<div class="m-chart">
+<div class="chart-wrapper-outter">
+<div class="chart-wrapper-inner">
+<canvas id="chart-leadership-skills"></canvas>
+</div>
+</div>
+<h3>Leadership</h3>
+</div>
+<div class="m-chart">
+<div class="chart-wrapper-outter">
+<div class="chart-wrapper-inner">
+<canvas id="chart-personal-skills"></canvas>
+</div>
+</div>
+<h3>Personal</h3>
+</div>
+<div class="m-chart">
+<div class="chart-wrapper-outter">
+<div class="chart-wrapper-inner">
+<canvas id="chart-capabilities-skills"></canvas>
+</div>
+</div>
+<h3>Capabilties</h3>
+</div>
+<div class="m-chart">
+<div class="chart-wrapper-outter">
+<div class="chart-wrapper-inner">
+<canvas id="chart-skills-skills"></canvas>
+</div>
+</div>
+<h3>Skills</h3>
+</div>
+<div class="m-chart">
+<div class="chart-wrapper-outter">
+<div class="chart-wrapper-inner">
+<canvas id="chart-officetools-skills"></canvas>
+</div>
+</div>
+<h3>Office Tools</h3>
+</div>
+<div class="m-chart">
+<div class="chart-wrapper-outter">
+<div class="chart-wrapper-inner">
+<canvas id="chart-devstacks-skills"></canvas>
+</div>
+</div>
+<h3>MarTech Stacks-1</h3>
+</div>
+<div class="m-chart">
+<div class="chart-wrapper-outter">
+<div class="chart-wrapper-inner">
+<canvas id="chart-fetech-skills"></canvas>
+</div>
+</div>
+<h3>MarTech Stacks-2</h3>
+</div>
+<div class="m-chart">
+<div class="chart-wrapper-outter">
+<div class="chart-wrapper-inner">
+<canvas id="chart-betech-skills"></canvas>
+</div>
+</div>
+<h3>Back-End Tech</h3>
+</div>
+<div class="m-chart">
+<div class="chart-wrapper-outter">
+<div class="chart-wrapper-inner">
+<canvas id="chart-otech-skills"></canvas>
+</div>
+</div>
+<h3>Product Stack</h3>
+</div>
+<div class="m-chart">
+<div class="chart-wrapper-outter">
+<div class="chart-wrapper-inner">
+<canvas id="chart-devtools-skills"></canvas>
+</div>
+</div>
+<h3>Other Tools</h3>
+</div>
+</div>
+<div class="m-footer">
+<div class="m-wrapper">
+<div class="m-title">Gaurav Raj Chattarki</div>
+<div class="m-contact-container">
+<ul class="m-contact-wrapper">
+<li class="m-address-line1"><span class="fa fa-fw fa-map-marker" aria-hidden="true"></span>&nbsp;&nbsp; <a href="https://www.google.ca/maps/place/984+Rue+Notre-Dame,+Repentigny,+QC+J5Y+1C9/@45.7719266,-73.5532736,11z/data=!4m5!3m4!1s0x4cc8ef667dd1d58b:0x4f7dcb1fb37a15e4!8m2!3d45.7718312!4d-73.4132194" target="_BLANK"></a>Somewhere near Roxbury</li>
+<li class="m-address-line2"><span class="fa fa-fw fa-map-marker" aria-hidden="true" style="color:transparent;"></span>&nbsp;&nbsp; <a href="https://www.google.com/maps/place/Mission+Hill,+Boston,+MA/@42.3313139,-71.1064244,16z/data=!3m1!4b1!4m5!3m4!1s0x89e37988a0981519:0x2759d3a3e805a92e!8m2!3d42.329617!4d-71.1062302?hl=en-SG" target="_BLANK">Boston MA</a></li>
+<li class="m-address-line3"><span class="fa fa-fw fa-map-marker" aria-hidden="true" style="color:transparent;"></span>&nbsp;&nbsp; <a href="https://www.google.com/maps/place/United+States/@37.2581488,-104.6556073,5z/data=!3m1!4b1!4m5!3m4!1s0x54eab584e432360b:0x1c3bb99243deb742!8m2!3d37.09024!4d-95.712891?hl=en-SG" target="_BLANK">US</a></li>
+</ul>
+<div class="m-contact-container">
+<ul class="m-contact-wrapper">
+<li class="m-contact-email"><span class="fa fa-fw fa-at" aria-hidden="true"></span>&nbsp;&nbsp; <a href="/cdn-cgi/l/email-protection#5e38372c2d2a303f333b70323f2d2a303f333b1e3b333f3732703d3133"><span class="__cf_email__" data-cfemail="73151a0100071d121e165d1f1200071d121e1633161e121a1f5d101c1e">chattarki.g@husky.neu.edu</span></a></li>
+<!--li class="m-contact-phone"><span class="fa fa-fw fa-home" aria-hidden="true"></span>&nbsp;&nbsp; <a href="tel:+18572061049">+1 (857) 206-1049</a><li-->
+<li class="m-contact-workphone"><span class="fa fa-fw fa-phone" aria-hidden="true"></span>&nbsp;&nbsp; <a href="tel:+18572061049">+1 (857) 206-1049</a></li>
+</ul>
+<ul class="m-contact-wrapper">
+<li class="m-contact-linkedin"><span class="fa fa-fw fa-linkedin" aria-hidden="true"></span>&nbsp;&nbsp; <a href="https://www.linkedin.com/in/gaurav-raj-chattarki/" target="_BLANK">Linkedin</a></li>
+<li class="m-contact-github"><span class="fa fa-fw fa-github" aria-hidden="true"></span>&nbsp;&nbsp; <a href="https://github.com/rajanator7" target="_BLANK">Github</a></li>
+<li class="m-contact-pdf"><span class="fa fa-fw fa-file-pdf-o" aria-hidden="true"></span>&nbsp;&nbsp; <a href="https://gauravrajchattarki952202.typeform.com/to/dSVWZe" target="_BLANK">Print Version</a></li>
+</ul>
+</div>
+</div>
+<div class="m-copyright">
+<p><span id="js-year"></span>&nbsp; &copy; &nbsp;<strong>reachraj.com</strong>, All Rights Reserved</p>
+</div>
+</div>
+</div>
+</div>
+<script id="rendered-js">
+      var cBusiness = document.getElementById("chart-business-skills");
+var cPersonal = document.getElementById("chart-personal-skills");
+var cLeadership = document.getElementById("chart-leadership-skills");
+var cOfficeTools = document.getElementById("chart-officetools-skills");
+var cCapabilities = document.getElementById("chart-capabilities-skills");
+var cSkills = document.getElementById("chart-skills-skills");
+var cDevStacks = document.getElementById("chart-devstacks-skills");
+var cFETech = document.getElementById("chart-fetech-skills");
+var cBETech = document.getElementById("chart-betech-skills");
+var cOTech = document.getElementById("chart-otech-skills");
+var cDevTools = document.getElementById("chart-devtools-skills");
+
+Chart.defaults.global.animation.duration = 2000;
+Chart.defaults.global.animation.easing = 'easeOutExpo';
+Chart.defaults.global.legend.display = false;
+Chart.defaults.global.startAngle = 36;
+Chart.defaults.global.tooltips.backgroundColor = 'rgba(204, 204, 204, 0.9)';
+Chart.defaults.global.tooltips.titleFontColor = 'rgba(59, 59, 59, 1)';
+Chart.defaults.global.tooltips.titleFontFamily = "'Lato', sans-serif";
+Chart.defaults.global.tooltips.titleFontSize = 16;
+Chart.defaults.global.tooltips.titleSpacing = 1;
+Chart.defaults.global.tooltips.titleMarginBottom = 10;
+Chart.defaults.global.tooltips.bodyFontColor = 'rgba(59, 59, 59, 1)';
+Chart.defaults.global.tooltips.bodyFontFamily = "'Lato', sans-serif";
+Chart.defaults.global.tooltips.bodyFontSize = 14;
+Chart.defaults.global.tooltips.bodySpacing = 1;
+Chart.defaults.global.tooltips.xPadding = 10;
+Chart.defaults.global.tooltips.yPadding = 10;
+Chart.defaults.global.tooltips.cornerRadius = 3;
+Chart.defaults.global.tooltips.enabled = true;
+Chart.defaults.global.tooltips.mode = 'point';
+Chart.defaults.global.tooltips.position = 'nearest';
+Chart.defaults.radar.scale.gridLines = false;
+
+var myChartBusiness = new Chart(cBusiness, {
+  type: 'radar',
+  data: {
+    labels: [["Process", "Excellence"], ["Problem", "Solving"], "Facilitation", ["Project", "Mgmt"], ["Change", "Mgmt"]],
+    datasets: [
+    {
+      label: "P.Practitioner",
+      lineTension: 0.1,
+      backgroundColor: "rgba(102, 153, 204, 0.2)",
+      borderColor: "rgba(102, 153, 204, 1)",
+      pointBackgroundColor: "rgba(102, 153, 204, 1)",
+      pointBorderColor: "#fff",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "#fff",
+      pointHoverBorderColor: "rgba(102, 153, 204, 1)",
+      data: [2, 3, 2, 1, 3] },
+
+    {
+      label: "P.Manager",
+      lineTension: 0.1,
+      backgroundColor: "rgba(255, 204, 102, 0.2)",
+      borderColor: "rgba(255, 204, 102, 1)",
+      pointBackgroundColor: "rgba(255, 204, 102, 1)",
+      pointBorderColor: "#fff",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "#fff",
+      pointHoverBorderColor: "rgba(255, 204, 102, 1)",
+      data: [2, 3, 3, 2, 3] }] },
+
+
+
+  options: {
+    scale: {
+      angleLines: {
+        display: true,
+        lineWidth: 0.5,
+        color: 'rgba(128, 128, 128, 0.2)' },
+
+      pointLabels: {
+        fontSize: 14,
+        fontStyle: '300',
+        fontColor: 'rgba(204, 204, 204, 1)',
+        fontFamily: "'Lato', sans-serif" },
+
+      ticks: {
+        beginAtZero: true,
+        maxTicksLimit: 3,
+        min: 0,
+        max: 3,
+        display: false } } } });
+
+
+
+
+
+
+
+var myChartPersonal = new Chart(cPersonal, {
+  type: 'radar',
+  data: {
+    labels: [["Inspire others", "Energetic"], ["Initiative", "& Drive"], ["Personal", "Effectiveness"], "Creativity", ["Decision", "Making"]],
+    datasets: [
+    {
+      label: "P.Practitioner",
+      lineTension: 0.1,
+      backgroundColor: "rgba(102, 153, 204, 0.2)",
+      borderColor: "rgba(102, 153, 204, 1)",
+      pointBackgroundColor: "rgba(102, 153, 204, 1)",
+      pointBorderColor: "#fff",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "#fff",
+      pointHoverBorderColor: "rgba(102, 153, 204, 1)",
+      data: [3, 3, 2, 3, 2] },
+
+    {
+      label: "P.Manager",
+      lineTension: 0.1,
+      backgroundColor: "rgba(255, 204, 102, 0.2)",
+      borderColor: "rgba(255, 204, 102, 1)",
+      pointBackgroundColor: "rgba(255, 204, 102, 1)",
+      pointBorderColor: "#fff",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "#fff",
+      pointHoverBorderColor: "rgba(255, 204, 102, 1)",
+      data: [3, 3, 3, 3, 2] }] },
+
+
+
+  options: {
+    startAngle: 36,
+    scale: {
+      angleLines: {
+        display: true,
+        lineWidth: 0.5,
+        color: 'rgba(128, 128, 128, 0.2)' },
+
+      pointLabels: {
+        fontSize: 14,
+        fontStyle: '300',
+        fontColor: 'rgba(204, 204, 204, 1)',
+        fontFamily: "'Lato', sans-serif" },
+
+      ticks: {
+        beginAtZero: true,
+        maxTicksLimit: 3,
+        min: 0,
+        max: 3,
+        display: false } } } });
+
+
+
+
+
+var myChartLeadership = new Chart(cLeadership, {
+  type: 'radar',
+  data: {
+    labels: [["Relationship", "Mgmt"], ["Talent", "Mgmt"], ["Impact &", "Influence"], ["Risk", "Mgmt"], ["Performance", "Mgmt"]],
+    datasets: [
+    {
+      label: "P.Practitioner",
+      lineTension: 0.1,
+      backgroundColor: "rgba(102, 153, 204, 0.2)",
+      borderColor: "rgba(102, 153, 204, 1)",
+      pointBackgroundColor: "rgba(102, 153, 204, 1)",
+      pointBorderColor: "#fff",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "#fff",
+      pointHoverBorderColor: "rgba(102, 153, 204, 1)",
+      data: [3, 2, 2, 3, 2] },
+
+    {
+      label: "P.Manager",
+      lineTension: 0.1,
+      backgroundColor: "rgba(255, 204, 102, 0.2)",
+      borderColor: "rgba(255, 204, 102, 1)",
+      pointBackgroundColor: "rgba(255, 204, 102, 1)",
+      pointBorderColor: "#fff",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "#fff",
+      pointHoverBorderColor: "rgba(255, 204, 102, 1)",
+      data: [3, 2, 3, 2, 2] }] },
+
+
+
+  options: {
+    scale: {
+      angleLines: {
+        display: true,
+        lineWidth: 0.5,
+        color: 'rgba(128, 128, 128, 0.2)' },
+
+      pointLabels: {
+        fontSize: 14,
+        fontStyle: '300',
+        fontColor: 'rgba(204, 204, 204, 1)',
+        fontFamily: "'Lato', sans-serif" },
+
+      ticks: {
+        beginAtZero: true,
+        maxTicksLimit: 3,
+        min: 0,
+        max: 3,
+        display: false } } } });
+
+
+
+
+
+var myChartCapabilities = new Chart(cCapabilities, {
+  type: 'radar',
+  data: {
+    labels: [["Emotional", "Intelligence"], "Presentation", ["Workflow", "Optimization"], ["Roadmap", "Planning"], ["Social", "Intelligence"]],
+    datasets: [
+    {
+      label: "All",
+      lineTension: 0.1,
+      backgroundColor: "rgba(204, 204, 204, 0.2)",
+      borderColor: "rgba(204, 204, 204, 1)",
+      pointBackgroundColor: "rgba(204, 204, 204, 1)",
+      pointBorderColor: "#fff",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "#fff",
+      pointHoverBorderColor: "rgba(204, 204, 204, 1)",
+      data: [3, 3, 3, 2.5, 2] }] },
+
+
+
+  options: {
+    scale: {
+      angleLines: {
+        display: true,
+        lineWidth: 0.5,
+        color: 'rgba(128, 128, 128, 0.2)' },
+
+      pointLabels: {
+        fontSize: 14,
+        fontStyle: '300',
+        fontColor: 'rgba(204, 204, 204, 1)',
+        fontFamily: "'Lato', sans-serif" },
+
+      ticks: {
+        beginAtZero: true,
+        maxTicksLimit: 3,
+        min: 0,
+        max: 3,
+        display: false } } } });
+
+
+
+
+var myChartSkills = new Chart(cSkills, {
+  type: 'radar',
+  data: {
+    labels: [["Google", "Analytics"], ["Webmaster", "Tools"], ["R", "Programming"], ["MATLAB"], "Tableau"],
+    datasets: [
+    {
+        label: "All",
+      lineTension: 0.1,
+      backgroundColor: "rgba(204, 204, 204, 0.2)",
+      borderColor: "rgba(204, 204, 204, 1)",
+      pointBackgroundColor: "rgba(204, 204, 204, 1)",
+      pointBorderColor: "#fff",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "#fff",
+      pointHoverBorderColor: "rgba(204, 204, 204, 1)",
+      data: [2.5, 2, 2.5, 2, 3] },
+
+    {
+      label: "ALL",
+      lineTension: 0.1,
+      backgroundColor: "rgba(204, 204, 204, 0.2)",
+      borderColor: "rgba(204, 204, 204, 1)",
+      pointBackgroundColor: "rgba(204, 204, 204, 1)",
+      pointBorderColor: "#fff",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "#fff",
+      pointHoverBorderColor: "rgba(204, 204, 204, 1)",
+      data: [2.5, 2, 2.5, 2, 3] }] },
+
+
+
+  options: {
+    scale: {
+      angleLines: {
+        display: true,
+        lineWidth: 0.5,
+        color: 'rgba(128, 128, 128, 0.2)' },
+
+      pointLabels: {
+        fontSize: 14,
+        fontStyle: '300',
+        fontColor: 'rgba(204, 204, 204, 1)',
+        fontFamily: "'Lato', sans-serif" },
+
+      ticks: {
+        beginAtZero: true,
+        maxTicksLimit: 3,
+        min: 0,
+        max: 3,
+        display: false } } } });
+
+
+
+
+
+var myChartOfficeTools = new Chart(cOfficeTools, {
+  type: 'radar',
+  data: {
+    labels: [["OS", "Windows"], ["MS", "Office"], ["MS", "SharePoint"], ["MS", "Excel/VBA"], ["OS", "macOS"]],
+    datasets: [
+    {
+      label: "All",
+      lineTension: 0.1,
+      backgroundColor: "rgba(204, 204, 204, 0.2)",
+      borderColor: "rgba(204, 204, 204, 1)",
+      pointBackgroundColor: "rgba(204, 204, 204, 1)",
+      pointBorderColor: "#fff",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "#fff",
+      pointHoverBorderColor: "rgba(204, 204, 204, 1)",
+      data: [3, 2, 2, 3, 3] }] },
+
+
+
+  options: {
+    scale: {
+      angleLines: {
+        display: true,
+        lineWidth: 0.5,
+        color: 'rgba(128, 128, 128, 0.2)' },
+
+      pointLabels: {
+        fontSize: 14,
+        fontStyle: '300',
+        fontColor: 'rgba(204, 204, 204, 1)',
+        fontFamily: "'Lato', sans-serif" },
+
+      ticks: {
+        beginAtZero: true,
+        maxTicksLimit: 3,
+        min: 0,
+        max: 3,
+        display: false } } } });
+
+
+
+
+
+var myChartDevStacks = new Chart(cDevStacks, {
+  type: 'radar',
+  data: {
+    labels: ["CMS", ["Advertising", "Technology"], ["Conversion", "Technology"], ["A/B", "Testing"], "CRM"],
+    datasets: [
+    {
+      label: "MarTech",
+      lineTension: 0.1,
+      backgroundColor: "rgba(199, 128, 247, 0.2)",
+      borderColor: "rgba(199, 128, 247, 1)",
+      pointBackgroundColor: "rgba(242, 119, 122, 1)",
+      pointBorderColor: "#fff",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "#fff",
+      pointHoverBorderColor: "rgba(242, 119, 122, 1)",
+      data: [3, 2.5, 2, 2.5, 3] }] },
+
+
+
+  options: {
+    scale: {
+      angleLines: {
+        display: true,
+        lineWidth: 0.5,
+        color: 'rgba(128, 128, 128, 0.2)' },
+
+      pointLabels: {
+        fontSize: 14,
+        fontStyle: '300',
+        fontColor: 'rgba(204, 204, 204, 1)',
+        fontFamily: "'Lato', sans-serif" },
+
+      ticks: {
+        beginAtZero: true,
+        maxTicksLimit: 3,
+        min: 0,
+        max: 3,
+        display: false } } } });
+
+
+
+
+
+var myChartFETech = new Chart(cFETech, {
+  type: 'radar',
+  data: {
+    labels: ["SEO", ["Outreach", "Technology"], ["Automation", "Software"], ["Web", "Analytics"], ["Social", "Media"]],
+    datasets: [
+    {
+      label: "MarTech",
+      lineTension: 0.1,
+      backgroundColor: "rgba(199, 128, 247, 0.2)",
+      borderColor: "rgba(199, 128, 247, 1)",
+      pointBackgroundColor: "rgba(242, 119, 122, 1)",
+      pointBorderColor: "#fff",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "#fff",
+      pointHoverBorderColor: "rgba(242, 119, 122, 1)",
+      data: [2, 2, 2, 3, 2] }] },
+
+
+
+  options: {
+    scale: {
+      angleLines: {
+        display: true,
+        lineWidth: 0.5,
+        color: 'rgba(128, 128, 128, 0.2)' },
+
+      pointLabels: {
+        fontSize: 14,
+        fontStyle: '300',
+        fontColor: 'rgba(204, 204, 204, 1)',
+        fontFamily: "'Lato', sans-serif" },
+
+      ticks: {
+        beginAtZero: true,
+        maxTicksLimit: 3,
+        min: 0,
+        max: 3,
+        display: false } } } });
+
+
+
+
+
+
+var myChartBETech = new Chart(cBETech, {
+  type: 'radar',
+  data: {
+    labels: ["SQL", "PHP", "HTML/CSS", "jQuery", "JS"],
+    datasets: [
+    {
+      label: "Dev",
+      lineTension: 0.1,
+      backgroundColor: "rgba(242, 119, 122, 0.2)",
+      borderColor: "rgba(242, 119, 122, 1)",
+      pointBackgroundColor: "rgba(242, 119, 122, 1)",
+      pointBorderColor: "#fff",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "#fff",
+      pointHoverBorderColor: "rgba(242, 119, 122, 1)",
+      data: [2.5, .5, 2, 1, .5] }] },
+
+
+
+  options: {
+    scale: {
+      angleLines: {
+        display: true,
+        lineWidth: 0.5,
+        color: 'rgba(128, 128, 128, 0.2)' },
+
+      pointLabels: {
+        fontSize: 14,
+        fontStyle: '300',
+        fontColor: 'rgba(204, 204, 204, 1)',
+        fontFamily: "'Lato', sans-serif" },
+
+      ticks: {
+        beginAtZero: true,
+        maxTicksLimit: 3,
+        min: 0,
+        max: 3,
+        display: false } } } });
+
+
+
+
+
+var myChartOTech = new Chart(cOTech, {
+  type: 'radar',
+  data: {
+    labels: [["Task", "Management"], "Collaboration", "Design/Prototyping", ["User", "Testing"], "Feedback"],
+    datasets: [
+    {
+      label: "Product",
+      lineTension: 0.1,
+      backgroundColor: "rgba(240, 237, 104, 0.2)",
+      borderColor: "rgba(240, 237, 104, 1)",
+      pointBackgroundColor: "rgba(242, 119, 122, 1)",
+      pointBorderColor: "#fff",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "#fff",
+      pointHoverBorderColor: "rgba(242, 119, 122, 1)",
+      data: [3, 3, 2, 2, 2.5] }] },
+
+
+
+  options: {
+    scale: {
+      angleLines: {
+        display: true,
+        lineWidth: 0.5,
+        color: 'rgba(128, 128, 128, 0.2)' },
+
+      pointLabels: {
+        fontSize: 14,
+        fontStyle: '300',
+        fontColor: 'rgba(204, 204, 204, 1)',
+        fontFamily: "'Lato', sans-serif" },
+
+      ticks: {
+        beginAtZero: true,
+        maxTicksLimit: 3,
+        min: 0,
+        max: 3,
+        display: false } } } });
+
+
+
+
+
+
+var myChartDevTools = new Chart(cDevTools, {
+  type: 'radar',
+  data: {
+    labels: ["Salesforce", "Asana", "Slack", "BPMN.io", "HubSpot"],
+    datasets: [
+    {
+      label: "All",
+      lineTension: 0.1,
+      backgroundColor: "rgba(204, 204, 204, 0.2)",
+      borderColor: "rgba(204, 204, 204, 1)",
+      pointBackgroundColor: "rgba(242, 119, 122, 1)",
+      pointBorderColor: "#fff",
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: "#fff",
+      pointHoverBorderColor: "rgba(242, 119, 122, 1)",
+      data: [1.5, 2, 3, 3, 3] }] },
+
+
+
+  options: {
+    scale: {
+      angleLines: {
+        display: true,
+        lineWidth: 0.5,
+        color: 'rgba(128, 128, 128, 0.2)' },
+
+      pointLabels: {
+        fontSize: 14,
+        fontStyle: '300',
+        fontColor: 'rgba(204, 204, 204, 1)',
+        fontFamily: "'Lato', sans-serif" },
+
+      ticks: {
+        beginAtZero: true,
+        maxTicksLimit: 3,
+        min: 0,
+        max: 3,
+        display: false } } } });
+
+
+// Insert Date in Copyright Footer Section
+var dt = new Date(),
+year = dt.getFullYear(),
+copyDateEl = document.getElementById("js-year"),
+currentYear = document.createTextNode(year);
+copyDateEl.appendChild(currentYear);
+      //# sourceURL=pen.js
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128257728-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-128257728-1');
+</script>
+<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+</body>
+</html>
